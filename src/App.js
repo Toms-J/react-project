@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import Card from './components/Card';
+import { Button } from '@material-ui/core';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const char = {
+    
+          id: 361,
+          name: "Toxic Rick",
+          status: "Dead",
+          species: "Humanoid",
+          type: "Rick's Toxic Side",
+          gender: "Male",
+          origin: {
+            name: "Alien Spa",
+            url: "https://rickandmortyapi.com/api/location/64"
+          },
+          location: {
+            name: "Earth",
+            url: "https://rickandmortyapi.com/api/location/20"
+          },
+          image: "https://rickandmortyapi.com/api/character/avatar/361.jpeg",
+          episode: [
+            "https://rickandmortyapi.com/api/episode/27"
+          ],
+          url: "https://rickandmortyapi.com/api/character/361",
+          created: "2018-01-10T18:20:41.703Z"
 }
 
-export default App;
+// const Card = (props) => {
+//     const { image, name, status, species } = props.character;
+//     return (
+//     <div className='card'>
+//         <img src={image}></img>
+//         <h2>{name}</h2>
+//         <p>{status} - {species}</p>
+//     </div>
+// )}
+
+
+const App = () => {
+    // const [data, setData] = useState([]);
+    
+    // useEffect(() => {
+    //     fetch('https://rickandmortyapi.com/api/character')
+    //     .then(res => res.json())
+    //     .then(body => {
+    //         setData(body.results);
+    //     })
+    // })
+    return (
+        <section className='card-section'>
+            {/* {data.map((el, index) => { */}
+                {/* <Card character={char} key={char.id}></Card> */}
+            {/* })} */}
+            {/* <Profile username="Tommaso"></Profile> */}
+            <Button color="secondary" size="large" variant="outlined">Hello World</Button>
+        </section>
+    )
+}
+
+export default App

@@ -2,16 +2,31 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './App.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// const element = <h1 className="red" id="underline">Ciao</h1>;  // codice JSX, esensione di Javascript
+// const element2 = React.createElement('h1', {className: 'red', id: 'underline'}, 'Hello');
+// root.render(
+//   // <React.StrictMode>
+//   //   <App />
+//   // </React.StrictMode>
+//   <Image />
+// );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// REGOLE JSX
+//  - ritornare un singolo elemento
+//  - usare camelcase per gli attributi html
+//  - usare className invece che class
+//  - chiudere ogni elemento come in html standard, o con self closing tag o con tag apertura/chiusura
+
+
+
+// COMPONENTI
+// I componenti vanno costruiti con la lettera maiuscola
+
+
+
+root.render(
+  <App />
+);

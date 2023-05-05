@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.red {
+  color: red;
+}
+
+#underline {
+  text-decoration: underline;
+  text-decoration-color: blue;
+}
+
+.article {
+  padding: 20px;
+  border: 1px solid black;
+  max-width: 300px;
+}
