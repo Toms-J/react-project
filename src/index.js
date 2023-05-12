@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React, { useState, useEffect} from 'react';
+import ReactDOM, { createRoot } from 'react-dom/client';
 import App from './App';
-import './App.css'
+import Project from './Project.js';
+import Form from './Form.js'
+import MyTable from './Table';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
 // const element = <h1 className="red" id="underline">Ciao</h1>;  // codice JSX, esensione di Javascript
 // const element2 = React.createElement('h1', {className: 'red', id: 'underline'}, 'Hello');
 // root.render(
@@ -27,6 +27,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 
+// ReactDOM.render(<App />,
+//   document.getElementById('root'));
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
-  <App />
+  <>
+    <Project />
+    {/* <App /> */}
+  </>
 );

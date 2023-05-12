@@ -1,0 +1,10 @@
+.coin-card img {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.filtri {
+    margin-bottom: 10px;
+}
