@@ -1,10 +1,11 @@
 import React from 'react'
 import {Card, CardMedia, CardContent, Typography, CardActionArea} from '@material-ui/core';
 import './style.css'
+import { getCoinDetail } from '../../api';
 
-function CoindCard(props) {
+function CoinCard(props) {
   return (
-    <Card sx={{ maxWidth: 345 }} className="coin-card">
+    <Card sx={{ maxWidth: 345 }} className="coin-card" onClick={() => props.getCoinDetail(props.id)}>
       <CardActionArea>
         <CardMedia
           image={props.image}
@@ -16,7 +17,7 @@ function CoindCard(props) {
             {props.name} - {props.symbol}
           </Typography>
           <Typography variant="h6" component="h3">
-            Max daily value: {props.high_24h} - Min daily value: {props.low_24h}
+            Max daily value: {props.high_24h}<br/>Min daily value: {props.low_24h}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -24,4 +25,4 @@ function CoindCard(props) {
   )
 }
 
-export default CoindCard
+export default CoinCard

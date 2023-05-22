@@ -1,0 +1,12 @@
+.postlist-container {
+    width: 70%;
+    margin: auto;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.actions {
+    justify-content: flex-end;
+}

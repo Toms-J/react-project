@@ -16,22 +16,11 @@ import {
   useParams,
   useLocation
 } from "react-router-dom";
+import Comments from './components/CommentsList';
+import Es1 from './components/Esercizi/Es1/Es1';
+import Es2 from './components/Esercizi/Es2/Es2';
 
 export default function App() {
-  // const [posts, setPosts] = useState([]);
-  // const [loading, setLoading ] = useState(false);
-
-  // useEffect(() => {
-  //   setLoading(true);
-  //   setTimeout(() => {
-  //     (async function () {
-  //       const res = await fetch(`https://jsonplaceholder.typicode.com/posts`)
-  //       .then(body => body.json()).then(res => res);
-  //       setPosts(res);
-  //       setLoading(false);
-  //      })();
-  //   }, 2000);
-  // }, []);
 
   // const [ users, setUsers] = useState([]);
 
@@ -49,130 +38,80 @@ export default function App() {
 
   return (
     <>
-        {/* <PostListWithLoader isLoading={loading} posts={posts}/> */}
         <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/about" render={(props) => <About {...props} isLoading={true}/>}/>
-        </Switch>
-      </div>
-    </Router>
-      {/* <Form handleSubmit={handleSubmit}/>
-      <hr />
-      <MyTable users={users} deleteUser={deleteUser}/> */}
+          <Switch>
+            <Route path="/playground">
+              <Es2 />
+            </Route>
+            <Route path="/posts">
+              {/* <PostList /> */}
+            </Route>
+            <Route path="/comments"> 
+              <Comments />
+            </Route>
+          </Switch>
+        </Router>
     </>
   )
 }
 
-const Home = () => {
+//   this.props.history.push(`/comments?postID=${post.id}`);
+// }
 
-  const history = useHistory();
+// const PostList = ({ posts }) => {
+//   return (
+//     <>
+//       {
+//         posts.map(post => (
+//           <article style={{border: '1px solid gray', borderRadius: 6, marginBottom: 10, padding: 10 }}>
+//             <h3 style={{textTransform: 'uppercase'}}>{post.title}</h3>
+//             <p>{post.body}</p>
+//             <Button variant='fullfilled' onClick={goToComments(post)}>Comments</Button>
+//           </article>
+//         ))
+//       }
+//     </>
+//   );
+// };
 
-  const goToAbout = () => {
-    history.push('/about');
-  }
+// const PostListWithLoader = WithLoader(PostList);
 
-  return (
-    <>
-    <h1>Home</h1>
-    <button onClick={goToAbout}>GO TO ABOUT</button>
-    </>
-  )
-}
+// const Users = () => {
+//   // const { id } = useParams();
+//   // const [ foundUser, setFoundUser ] = useState();
+// const {search} = useLocation();
 
-class About extends React.Component {
+// const USERS = [
+//   {id: 1, name: 'Tommaso'},
+//   {id: 2, name: 'Luca'},
+//   {id: 3, name: 'Dario'},
+//   {id: 4, name: 'Lorenzo'}
+// ];
 
-  goToHome = () => {
-    this.props.history.push('/');
-  }
+//   const [ users, setUsers] = useState(USERS);
 
-  render() {
-    console.log(this.props);
-    return (
-      <>
-      <h1>About</h1>
-      <button onClick={this.goToHome}>GO TO HOME</button>
-      </>
-    )
-  }
-}
+//   // useEffect(() => {
+//   //   const user = users.find(user => user.id === Number(id))
+//   //   setFoundUser(user?.name || 'Nessun utente trovato')
+//   // }, [id]);
 
+//   useEffect(() => {
+//     const params = new URLSearchParams(search);
+//     const name = params.get('name');
+//     setUsers(USERS.filter(user => user.name.includes(name)));
+//   }, [ search ]);
 
-
-const Users = () => {
-  // const { id } = useParams();
-  // const [ foundUser, setFoundUser ] = useState();
-const {search} = useLocation();
-
-const USERS = [
-  {id: 1, name: 'Tommaso'},
-  {id: 2, name: 'Luca'},
-  {id: 3, name: 'Dario'},
-  {id: 4, name: 'Lorenzo'}
-];
-
-  const [ users, setUsers] = useState(USERS);
-
-  // useEffect(() => {
-  //   const user = users.find(user => user.id === Number(id))
-  //   setFoundUser(user?.name || 'Nessun utente trovato')
-  // }, [id]);
-
-  useEffect(() => {
-    const params = new URLSearchParams(search);
-    const name = params.get('name');
-    setUsers(USERS.filter(user => user.name.includes(name)));
-  }, [ search ]);
-
-  return (
-  <>
-    <h1>Users</h1>
-    <ul>
-      {users.map((user, i) => <li key={i}>{user.name}</li>)}
-    </ul>
-  </>
-  );
-}
+//   return (
+//   <>
+//     <h1>Users</h1>
+//     <ul>
+//       {users.map((user, i) => <li key={i}>{user.name}</li>)}
+//     </ul>
+//   </>
+//   );
+// }
 
 
-const PostList = ({ posts }) => {
-  return (
-    <>
-      {
-        posts.map(post => (
-          <article style={{border: '1px solid gray', borderRadius: 6, marginBottom: 10, padding: 10 }}>
-            <h3 style={{textTransform: 'uppercase'}}>{post.title}</h3>
-            <p>{post.body}</p>
-          </article>
-        ))
-      }
-    </>
-  );
-};
-
-const PostListWithLoader = WithLoader(PostList);
 
 // const INITIAL_FORM_STATE = {
 //   fullname: '',

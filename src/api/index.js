@@ -32,3 +32,14 @@ export const getCategoryList = () => {
             console.log('error', err);
         })
     };
+
+    export const getCoinDetail = (id) => {
+        // ?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en
+            return axios.get(`${ENDPOINTS.COIN_DETAIL}/${id}?localization=false`)
+            .then(res => {
+                return res
+            })
+            .catch(err => {
+                console.log('error', err);
+            })
+        };

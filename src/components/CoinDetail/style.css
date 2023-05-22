@@ -1,0 +1,15 @@
+.card-detail {
+    width: 600px;
+    padding: 30px;
+}
+
+.coin-thumbnail {
+    width: 50% !important;
+    margin: auto;
+    display: block !important;
+}
+
+.btn {
+    justify-content: left !important;
+    text-transform: none !important;
+}
